@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "chat-lobby": "packages/chat-lobby",
+    "chat-lobby-e2e": "packages/chat-lobby-e2e"
+  }
 }

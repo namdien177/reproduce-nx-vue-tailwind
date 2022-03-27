@@ -1,0 +1,28 @@
+{
+  "root": "packages/chat-lobby-e2e",
+  "sourceRoot": "packages/chat-lobby-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/chat-lobby-e2e/cypress.json",
+        "devServerTarget": "chat-lobby:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "chat-lobby:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/chat-lobby-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["chat-lobby"]
+}

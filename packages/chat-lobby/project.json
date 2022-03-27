@@ -1,0 +1,54 @@
+{
+  "root": "packages/chat-lobby",
+  "projectType": "application",
+  "sourceRoot": "packages/chat-lobby/src",
+  "targets": {
+    "build": {
+      "executor": "@nx-plus/vue:browser",
+      "options": {
+        "dest": "dist/packages/chat-lobby",
+        "index": "packages/chat-lobby/public/index.html",
+        "main": "packages/chat-lobby/src/main.ts",
+        "tsConfig": "packages/chat-lobby/tsconfig.app.json"
+      },
+      "configurations": {
+        "production": {
+          "mode": "production",
+          "filenameHashing": true,
+          "productionSourceMap": true,
+          "css": {
+            "extract": true,
+            "sourceMap": false
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx-plus/vue:dev-server",
+      "options": {
+        "browserTarget": "chat-lobby:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "chat-lobby:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/chat-lobby/**/*.{ts,tsx,vue}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/chat-lobby"],
+      "options": {
+        "jestConfig": "packages/chat-lobby/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
