@@ -3,7 +3,7 @@ module.exports = {
   darkMode: 'class',
   purge: {
     content: [
-      './apps/**/*.{html,ts,css,scss,sass,vue,tsx,less,styl}',
+      './packages/**/*.{html,ts,css,scss,sass,vue,tsx,less,styl}',
       './libs/**/*.{html,ts,css,scss,sass,vue,tsx,less,styl}',
     ],
   },
